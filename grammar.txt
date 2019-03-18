@@ -1,0 +1,132 @@
+Friday February 22nd, 2019
+Jacoby Benger
+CS 403
+
+GRAMMAR
+
+program				: definiton
+					| definiton program
+
+
+definiton 			: classDef
+					| functionDef
+					| idExpr 
+
+
+classDef			: CLASS ID BLOCK
+
+
+varDef				: VAR_TYPE ID optInit SEMICOLON
+
+
+idExpr				: ID
+					| ID init SEMICOLON
+					| ID functionCall
+
+
+unary 				: idExpr
+					| INTEGER
+					| REAL
+					| BOOLEAN
+					| STRING
+					| UMINUS unary
+					| parenExpr
+					| functionCall
+					| PLUSPLUS id
+					| MINUSMINUS id
+					| LAMBDA functionCall block
+					| PRINT OPAREN argList CPAREN SEMICOLON
+					| PRINTLN OPAREN argList CPAREN SEMICOLON
+
+
+operator			: PLUS
+					| MINUS
+					| TIMES
+					| DIVIDE
+					| MOD
+
+
+comparator			: LESSTHAN
+					| GREATTHAN
+					| GREATEQUAL
+					| LESSEQUAL
+					| EQUAL
+					| NOTEQUAL
+					| AND
+					| NOT
+
+
+parenExpr			: OPAREN expr CPAREN 
+					| OPAREN expr CPAREN OPAREN optArgList CPAREN
+
+
+init 				: ASSIGN expr 
+
+optInit				: init	
+					| *EMPTY*
+
+expr 				: unary
+					| unary operator expr
+
+
+paramList			: ID
+					| ID COMMA paramList
+
+
+optParamList		: paramList
+					| *EMPTY*
+
+
+argList 			: expr	
+					| expr COMMA argList
+
+
+optArgList			: argList
+					| *EMPTY*
+
+
+statement			: expr SEMICOLON
+					| ifstatement
+					| varDef
+					| functionDef
+					| functionCall
+					| whileLoop
+					| returnCall
+
+
+statements			: statement
+					| statement statements
+
+
+block				: OBRACE statements CBRACE
+
+
+conditional			: unary 
+					| unary comparator unary
+
+conditionalList		: conditional 
+					| conditional AND conditionalList
+					| conditional OR conditionalList
+
+
+whileLoop			: WHILE OPAREN conditionalList CPAREN block
+
+
+ifstatement			: IF OPAREN conditionalList CPAREN block optElse
+
+
+optElse				: ELSE block
+					| ELSE ifstatement
+					| *EMPTY*
+
+
+functionDef			: FUNCTION ID OSQUARE optParamList CSQUARE block
+
+
+functionCall		: OSQUARE optArgList CSQUARE
+
+
+returnCall 			: RETURN SEMICOLON
+					| RETURN expr SEMICOLON
+					| RETURN functionCall SEMICOLON
+

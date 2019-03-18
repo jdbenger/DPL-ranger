@@ -1,0 +1,35 @@
+#This demonstrates the ability to iterate through an Array and also with function calls
+
+class iter
+{
+    var iarr = newArray[10];
+    var x = 0;
+
+    #Populating Array
+    while(x < 10)
+    {
+        setArray[iarr, x, x*2];
+        ++x;
+    }
+
+    var y = 0;
+    #Iterating through Array
+    while(y < 10)
+    {
+        println("iarr[", y, "] = ", getArray[iarr, y]);
+        ++y;
+    }
+
+    #Iteration with Functions
+    function r[temp]
+    {
+        if(temp < 5)
+        {
+            println(temp);
+            ++temp;
+            return r[temp];
+        }
+    }
+    r[0];
+    println("r[0] should print values 0 - 4.");
+};

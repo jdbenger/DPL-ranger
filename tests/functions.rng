@@ -1,0 +1,28 @@
+#This is a test of the ability to pass and return functions
+
+class main
+{
+	function sum[a,b]
+	{
+		if(a == b)
+		{	
+			return double[a];
+		}
+		else
+		{
+			return a+b;
+		}
+	}
+
+	function double[num]
+	{
+		return num+num;
+	}	
+
+	println("sum[2, 2] = ", sum[2, 2]);
+    println("sum[2, 3] = ", sum[2, 3]);
+    println("sum[10, 10] = ", sum[10, 10]);
+
+    println("double[sum[2,3]] = ", double[sum[2,3]]);
+    println("double[sum[12, 10]] = ", double[sum[12, 10]]);
+};

@@ -1,0 +1,37 @@
+#This file demonstrates the File I/O capabilities and command line arguments
+#The file name is read in through the command line if one is specified
+
+class main
+{
+    var numCL = getArgCount[];
+    if(numCL == 1)
+    {
+        #Gets file via command line   
+        var filename = getArg[0];
+        var fp = openFileForReading[filename];
+        println("Opening file from command line - ", filename);
+    }
+    else
+    {
+        #Default if no command line file
+        var fp = openFileForReading["ints.txt"];
+    }
+    
+    var result;
+    var sum;
+    var eof = atFileEnd[fp];
+
+    while(eof == false)
+    {
+        result = readInteger[fp];
+        println("the value read - ", result);
+        sum = sum + result;
+        eof = atFileEnd[fp];
+    }
+
+    closeFile[fp];
+
+    #Sum should be 55
+    println("sum = ", sum);
+
+};

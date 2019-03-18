@@ -1,0 +1,11 @@
+#This demonstrates an error with a trailing comma in an argurement list
+
+class main
+{
+	var a = "this works";
+	var b = false;
+	var x = 12.1;
+    
+    #Trailing comma after the variable x
+    println("a = ", a, "b = ", b, "x = ", x, );
+};

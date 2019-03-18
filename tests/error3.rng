@@ -1,0 +1,10 @@
+#This demonstates an error attempting to declare a function without square brackets
+
+class error
+{
+    #Function parameters must be contained within [  ]
+    function err(value, list)
+    {
+        println("THERE IS AN ERROR");
+    }
+};

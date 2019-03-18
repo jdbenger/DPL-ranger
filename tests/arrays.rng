@@ -1,0 +1,33 @@
+#THIS FILE DEMONSTRATES THE FUNCTIONALITY OF ARRAYS
+
+
+class arrays
+{
+    var iarr = newArray[5];
+    var x = 0;
+
+    while(x < 5)
+    {
+        setArray[iarr, x, x*2];
+        ++x;
+    }
+
+    println("iarr[0] = ", getArray[iarr, 0]);
+    println("iarr[1] = ", getArray[iarr, 1]);
+    println("iarr[2] = ", getArray[iarr, 2]);
+    println("iarr[3] = ", getArray[iarr, 3]);
+    println("iarr[4] = ", getArray[iarr, 4]);
+
+    var sarr = newArray[3];
+
+    setArray[sarr, 0, "this is"];
+    setArray[sarr, 1, " a "];
+    setArray[sarr, 2, "string array"];
+
+    var y = 0;
+    while(y < 3)
+    {
+        println("sarr[",y,"] = ", getArray[sarr, y]);
+        ++y;
+    }
+};

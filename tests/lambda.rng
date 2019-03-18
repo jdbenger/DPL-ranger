@@ -1,0 +1,27 @@
+#This is a lambda test
+
+class main
+{
+	function f[x]
+    {
+    	lambda [y] { x + y; };
+    }
+
+	var a = f[3];
+	var b = f[11];
+
+	println("a[5] = ", a[5]);
+	println("b[6] = ", b[6]);
+	println("a[10] = ", a[10]);
+
+    function q[one]
+    {
+        lambda [two] { one*two; };
+    }
+
+    var t1 = q[5];
+
+    println("t1[5] = ", t1[5]);
+    println("t1[100] = ", t1[100]);
+
+};

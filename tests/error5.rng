@@ -1,0 +1,12 @@
+#This demonstrates an illegal type comparison 
+
+class comp
+{
+    var a = 100;
+    var b = "this is a string";
+
+    if(a > b)
+    {
+        println("a is greater than b");
+    }
+};

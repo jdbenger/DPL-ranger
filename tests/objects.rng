@@ -1,0 +1,35 @@
+#THIS IS A TEST OF OBJECTS
+
+class main
+{
+	function guy[value]
+	{
+		this;
+	}	 
+
+    #Constructor
+	var obj = guy[1234];
+
+	println("obj.value = ", obj.value);
+
+    #Updating Value
+	obj.value = 5;
+
+	println("After updating, obj.value = ", obj.value);
+
+    function other[id, val]
+    {
+        this;
+    }
+
+    #Constructor
+    var otherobj = other[1, 19];
+
+    println("otherobj.id = ", otherobj.id, " otherobj.val = ", otherobj.val);
+
+    var result;
+
+    result = otherobj.val + obj.value;
+
+    println("otherobj.val + obj.value = ", result);
+};

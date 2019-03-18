@@ -1,0 +1,21 @@
+#This is a test of recursion
+
+
+class main
+{
+    function recurLoop[num]
+    {
+        if(num < 10)
+        {
+            println("num = ", num);
+            ++num;
+            return recurLoop[num];
+        }
+        else
+        {
+            println("Loop Finished");
+        }
+    }
+
+    recurLoop[3];
+};

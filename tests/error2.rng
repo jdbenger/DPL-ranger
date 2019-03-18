@@ -1,0 +1,7 @@
+#Bad Variable Declaration Error
+
+class error2
+{
+    #Cannot Declare an INTEGER as a variable
+    var 4 = 0;
+};

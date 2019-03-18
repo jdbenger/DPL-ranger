@@ -1,0 +1,9 @@
+#This demonstrates the ability to detect undeclared Variables
+
+class test
+{
+    #the variable 'bad' has not been declared in this scope
+    var a = 100;
+    println("bad = ");
+    println(bad);
+};

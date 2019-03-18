@@ -1,0 +1,57 @@
+#This demonstrates the functionality of Conditionals
+
+class conditional
+{
+    var a = 10;
+    var b = 5;
+
+    if(a > b)
+    {
+        println("this should print.");
+    }
+    else
+    {
+        println("this should not print.");
+    }
+
+    var five = false;
+    var x = 0;
+    while(five == false)
+    {
+        if(x == 5)
+        {
+            five = true;
+        }
+        ++x;
+    }
+    println("five is now = ", five);
+
+    var t1 = 3;
+    var t2 = 4;
+    while(t1>0 && t2 > 0)
+    {
+        println("this should print 3 times");
+        --t1;
+        --t2;
+    }
+
+    a = b;
+    if(a <= b)
+    {
+        #This should also print
+        println("a = ", a, "b = ", b);
+    }
+    
+    a = 3;
+    b = 6;
+
+    t1 = 5;
+    t2 = 6;
+    
+    while(a <= b || t2 >= t1)
+    {
+        println("this statement should print twice.");
+        a = a+4;
+        ++t1;
+    }
+};
